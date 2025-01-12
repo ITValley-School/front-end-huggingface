@@ -1,0 +1,38 @@
+{
+  "chat_completions.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "image_generate.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "fine_tuning.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "stt.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "tts.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "chat.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "translate.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "tradutor.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  },
+  "moderation.ejs": {
+    "layoutPage": "main",
+    "description": ""
+  }
+}

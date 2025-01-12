@@ -1,0 +1,14 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="chat02" appConnect="local" -->
+<dmx-api-action id="api" url="https://backend-llms.azurewebsites.net/api/chat_completion" method="post" dmx-header:content-type="'application/json'" dmx-header:accept="'application/json'" data-type="json" dmx-data:prompt="text.value" dmx-data:max_length="100" noload="true"></dmx-api-action>
+<meta name="ac:route" content="/chat">
+<div class="container">
+    <div class="row mt-4 mb-4">
+        <textarea id="text" name="text"></textarea>
+        <button id="btn" class="btn btn-primary mt-2" dmx-on:click="api.load({})">Button</button>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h6>Resposta: {{api.data[0].generated_text}}</h6>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "prompt_chat"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "api",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "url": "https://backend-llms.azurewebsites.net/api/chat_completion",
+        "method": "POST",
+        "dataType": "json",
+        "headers": {
+          "Content-type": "application/json",
+          "Accept": "application/json"
+        },
+        "data": {
+          "prompt": "{{$_POST.prompt_chat}}",
+          "max_length": 100
+        },
+        "schema": [
+          {
+            "type": "array",
+            "name": "data",
+            "sub": [
+              {
+                "type": "text",
+                "name": "generated_text"
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "content-length"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              }
+            ]
+          }
+        ]
+      },
+      "meta": [
+        {
+          "type": "array",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "generated_text"
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-length"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            }
+          ]
+        }
+      ],
+      "outputType": "object",
+      "output": true
+    }
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "routes": [
+    {
+      "path": "/",
+      "page": "index",
+      "routeType": "page",
+      "layout": "main"
+    },
+    {
+      "path": "/chat_completions",
+      "page": "chat_completions",
+      "layout": "main"
+    },
+    {
+      "path": "/image_generate",
+      "page": "image_generate",
+      "layout": "main"
+    },
+    {
+      "path": "/translate",
+      "page": "translate",
+      "layout": "main"
+    },
+    {
+      "path": "/fine_tuning",
+      "page": "fine_tuning",
+      "layout": "main"
+    },
+    {
+      "path": "/stt",
+      "page": "stt",
+      "layout": "main"
+    },
+    {
+      "path": "/tts",
+      "page": "tts",
+      "layout": "main"
+    },
+    {
+      "path": "/chat",
+      "page": "chat",
+      "layout": "main"
+    },
+    {
+      "path": "/tradutor",
+      "page": "tradutor",
+      "layout": "main"
+    },
+    {
+      "path": "/moderation",
+      "page": "moderation",
+      "layout": "main"
+    }
+  ]
+}

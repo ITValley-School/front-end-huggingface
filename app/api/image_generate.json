@@ -1,0 +1,107 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "prompt"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "api_image",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "method": "POST",
+        "dataType": "json",
+        "data": {
+          "prompt": "{{$_GET.prompt}}"
+        },
+        "headers": {
+          "Accept": "application/json",
+          "Content-type": "application/json"
+        },
+        "url": "https://backend-llms.azurewebsites.net/api/image",
+        "schema": [
+          {
+            "type": "object",
+            "name": "data",
+            "sub": [
+              {
+                "type": "text",
+                "name": "message"
+              },
+              {
+                "type": "text",
+                "name": "image_data"
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "content-length"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              }
+            ]
+          }
+        ]
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "object",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "message"
+            },
+            {
+              "type": "text",
+              "name": "image_data"
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-length"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            }
+          ]
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}

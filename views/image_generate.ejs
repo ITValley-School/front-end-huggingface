@@ -1,0 +1,30 @@
+<!-- Wappler include head-page="layouts/main" fontawesome_5="cdn" bootstrap5="custom" is="dmx-app" id="image_generate" appConnect="local" -->
+
+<meta name="ac:route" content="/image_generate">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Imagens</title>
+    <link rel="stylesheet" href="/assets/css/image.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="input-wrapper">
+            <input type="text" class="prompt-input" placeholder="Descreva a imagem que você quer gerar...">
+            <button class="generate-button" dmx-on:click="flow_image.run()">➤</button>
+        </div>
+
+        <div class="image-container">
+            <div class="placeholder-text">
+                A imagem gerada aparecerá aqui
+            </div>
+            <div class="loading">
+                Gerando imagem...
+            </div>
+            <img class="generated-image" alt="Imagem gerada" dmx-bind:src="flow_image.data.sc_image_generate.data.image_data">
+        </div>
+    </div>
+    <script src="/assets/js/image.js"></script>
+</body>

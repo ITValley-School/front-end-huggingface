@@ -1,0 +1,100 @@
+{
+  "meta": {
+    "$_GET": [
+      {
+        "type": "text",
+        "name": "generated_text"
+      }
+    ]
+  },
+  "exec": {
+    "steps": {
+      "name": "api_chat_completion",
+      "module": "api",
+      "action": "send",
+      "options": {
+        "url": "https://backend-llms.azurewebsites.net/api/chat_completion",
+        "method": "POST",
+        "headers": {
+          "accept": "application/json",
+          "Content-Type": "application/json"
+        },
+        "dataType": "json",
+        "data": {
+          "prompt": "bob esponja quem é",
+          "max_length": 100
+        },
+        "schema": [
+          {
+            "type": "array",
+            "name": "data",
+            "sub": [
+              {
+                "type": "text",
+                "name": "generated_text"
+              }
+            ]
+          },
+          {
+            "type": "object",
+            "name": "headers",
+            "sub": [
+              {
+                "type": "text",
+                "name": "content-length"
+              },
+              {
+                "type": "text",
+                "name": "content-type"
+              },
+              {
+                "type": "text",
+                "name": "date"
+              },
+              {
+                "type": "text",
+                "name": "server"
+              }
+            ]
+          }
+        ]
+      },
+      "output": true,
+      "meta": [
+        {
+          "type": "array",
+          "name": "data",
+          "sub": [
+            {
+              "type": "text",
+              "name": "generated_text"
+            }
+          ]
+        },
+        {
+          "type": "object",
+          "name": "headers",
+          "sub": [
+            {
+              "type": "text",
+              "name": "content-length"
+            },
+            {
+              "type": "text",
+              "name": "content-type"
+            },
+            {
+              "type": "text",
+              "name": "date"
+            },
+            {
+              "type": "text",
+              "name": "server"
+            }
+          ]
+        }
+      ],
+      "outputType": "object"
+    }
+  }
+}
