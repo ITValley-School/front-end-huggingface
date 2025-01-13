@@ -22,11 +22,6 @@
       "layout": "main"
     },
     {
-      "path": "/fine_tuning",
-      "page": "fine_tuning",
-      "layout": "main"
-    },
-    {
       "path": "/stt",
       "page": "stt",
       "layout": "main"
@@ -34,11 +29,6 @@
     {
       "path": "/tts",
       "page": "tts",
-      "layout": "main"
-    },
-    {
-      "path": "/chat",
-      "page": "chat",
       "layout": "main"
     },
     {
